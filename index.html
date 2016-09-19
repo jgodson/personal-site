@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Jason Godson's Personal Page">
+    <meta name="keywords" content="HTML,CSS,JavaScript,Developer,Progamming,Coding,Freelance,Hire">
+    <meta name="author" content="Jason Godson">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jason Godson's Personal Page</title>
+
+    <link rel="tab icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  </head>
+  <body>
+    <div id="nav-button" onclick="toggleMenu(this)">
+      <i class='fa fa-bars'></i>
+    </div>
+    <nav>
+      <img src='/images/profile_small.jpg'>
+      <h4>Jason Godson</h4>
+      <h5>Web/Software Developer</h5>
+      <p><a onclick="transition('main')">Main</a></p>
+      <p><a onclick="transition('about')">About</a></p>
+      <p><a onclick="transition('services')">Services</a></p>
+      <p><a href="/portfolio">Portfolio</a></p>
+      <p><a href="/blog">Blog</a></p>
+      <p><a onclick="transition('contact')">Contact</a></p>
+    </nav>
+    <div id='container'>
+      <div class="full" id="main">
+        <div class="fill">
+          <div class="content">
+            <p>I can build web <i class="fa fa-globe"></i>, mobile <i class="fa fa-mobile"></i> and desktop <i class="fa fa-desktop"></i> apps.</p>
+            <p>As well as websites of all kinds.</p>
+            <a onclick="transition('contact')"><button>Lets build something <i class="fa fa-link"></i> together</button></a>
+          </div>
+        </div>
+        <div id="scroll-down"><i class="fa fa-arrow-down"></i></div>
+      </div>
+      <div class="full" id="about">
+        <p>About Me Stuff Here</p>
+      </div>
+      <div class="full" id="services">
+        <p>Services Offered Here</p>
+      </div>
+      <div class="full" id="contact">
+        <p>Contact Form Goes Here</p>
+      </div>
+      <div id="footer">
+        <p>Social Media stuff goes here</p>
+      </div>
+    </div>
+    <script type="text/javascript" src="/javascript/scripts.js"></script>
+  </body>
+</html>

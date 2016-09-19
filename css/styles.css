@@ -1,0 +1,156 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Muli', sans-serif;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+#nav-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 300%;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  left: -201px;
+  height: 100%;
+  width: 200px;
+  background-color: #EAEAF2;
+  transition: all 400ms ease-out;
+  border-right: 1px solid black;
+  text-align: center;
+  z-index: 999;
+}
+
+nav.open {
+  visibility: visible;
+  left: 0;
+}
+
+nav img {
+  width: 150px;
+  height: 150px;
+  margin: 0 25px;
+  margin-top: 75px;
+  border-radius: 50%;
+}
+
+nav h4 {
+  font-size: 130%;
+  margin: 0;
+}
+
+nav h5 {
+  margin: 0;
+  padding: 5px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+
+nav p {
+  padding: 10px;
+}
+
+nav p a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+nav p a:hover {
+  color: #DCC2B5;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  transition: opacity 400ms;
+}
+
+#main {
+  background-image: url(/images/main-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+#main .fill {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: table;
+}
+
+#main .content {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 200%;
+  color: white;
+}
+
+#main .content button {
+  margin-top: 15px;
+  background-color: #419BD3;
+  border: none;
+  border-radius: 30px;
+  font-size: 50%;
+  padding: 20px;
+  transition: all 300ms;
+  cursor: pointer;
+  outline: none;
+}
+
+#main .content button:hover {
+  background-color: #009DFF;
+}
+
+#scroll-down {
+  position: absolute;
+  width: 30px;
+  left: calc(50% - 15px);
+  bottom: 10px;
+  color: white;
+  font-size: 30px;
+  animation: arrow-down 400ms infinite;
+}
+
+#about {
+}
+
+#services {
+}
+
+#contact {
+}
+
+#footer {
+  width: 100%;
+  height: 40%;
+  background-color: #419BD3;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes arrow-down {
+  0% {
+    bottom: 0px;
+  }
+  50% {
+    bottom: 10px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
