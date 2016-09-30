@@ -125,6 +125,27 @@ nav p a:hover {
 }
 
 #about {
+  background-color: ghostwhite;
+}
+
+#about .content {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+#about .content div {
+  width: 100%;
+}
+
+#about .content img {
+  width: 100%;
+}
+
+#about .content div p {
+  padding: 10px 30px;
+  text-align: justify;
+  line-height: 1.5;
 }
 
 #services {
@@ -156,9 +177,47 @@ nav p a:hover {
   color: white;
 }
 
+.social-icon-text {
+  position: relative;
+}
+
 .full {
   width: 100%;
   height: 100%;
+}
+
+.expandable {
+  height: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  #about .content div {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+  }
+
+  #about .content img {
+    border-radius: 50px;
+    padding: 10px;
+    position: relative;
+    top: 2px;
+  }
+
+  #about .content div p {
+    font-size: 110%;
+  }
+
+}
+
+@media screen and (min-width: 1280px) {
+  #about .content div p {
+    font-size: 130%;
+  }
 }
 
 @keyframes arrow-down {

@@ -1,7 +1,5 @@
 'use strict'
 
-document.o
-
 function closeMenu() {
   // close navigation if it is open
   if (document.getElementsByTagName('nav')[0].classList.length > 0) {
