@@ -73,7 +73,7 @@ nav p a:hover {
 #container {
   width: 100%;
   height: 100%;
-  transition: opacity 400ms;
+  transition: opacity 200ms;
 }
 
 #main {
@@ -95,6 +95,7 @@ nav p a:hover {
   vertical-align: middle;
   font-size: 200%;
   color: white;
+  padding: 0 10px;
 }
 
 #main .content button {
@@ -136,6 +137,23 @@ nav p a:hover {
   width: 100%;
   height: 40%;
   background-color: #419BD3;
+  text-align: center;
+  color: white;
+}
+
+#footer p {
+  padding: 30px;
+}
+
+.social-icons a {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 400%;
+  color: white;
+}
+
+.social-icons a:visted {
+  color: white;
 }
 
 .full {

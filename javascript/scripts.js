@@ -1,14 +1,26 @@
 'use strict'
 
+document.o
+
+function closeMenu() {
+  // close navigation if it is open
+  if (document.getElementsByTagName('nav')[0].classList.length > 0) {
+    document.getElementsByTagName('nav')[0].classList.remove('open');
+    var icon = document.getElementById('nav-button').children[0];
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+  }
+}
+
 function transition(destination) {
-  console.log(destination);
   destination = document.getElementById(destination);
   document.getElementById('container').style.opacity = 0;
   setTimeout(function() {
     var offset = destination.scrollTop || destination.offsetTop;
     window.scrollTo(0 , offset);
     document.getElementById('container').style.opacity = 1;
-  }, 400);
+  }, 200);
+  closeMenu();
 }
 
 function toggleMenu(thisElement) {
