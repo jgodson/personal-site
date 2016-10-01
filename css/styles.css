@@ -1,14 +1,48 @@
+/* general styles */
 html, body {
   width: 100%;
   height: 100%;
   font-family: 'Muli', sans-serif;
   margin: 0;
+  background-color: ghostwhite;
 }
 
 p {
   margin: 0;
 }
 
+.button {
+  border: none;
+  border-radius: 30px;
+  padding: 20px;
+  transition: all 300ms;
+  cursor: pointer;
+  outline: none;
+}
+
+.blue-button {
+  background-color: #419BD3;
+}
+
+.blue-button:hover {
+  background-color: #009DFF;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+}
+
+.expandable {
+  height: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+/* end gereral styles */
+
+/* navigation menu */
 #nav-button {
   position: fixed;
   top: 10px;
@@ -39,7 +73,7 @@ nav img {
   width: 150px;
   height: 150px;
   margin: 0 25px;
-  margin-top: 75px;
+  margin-top: 50px;
   border-radius: 50%;
 }
 
@@ -58,6 +92,7 @@ nav h5 {
 
 nav p {
   padding: 10px;
+  font-size: 140%;
 }
 
 nav p a {
@@ -69,7 +104,9 @@ nav p a {
 nav p a:hover {
   color: #DCC2B5;
 }
+/* end navigation menu */
 
+/* landing container */
 #container {
   width: 100%;
   height: 100%;
@@ -100,18 +137,7 @@ nav p a:hover {
 
 #main .content button {
   margin-top: 15px;
-  background-color: #419BD3;
-  border: none;
-  border-radius: 30px;
   font-size: 50%;
-  padding: 20px;
-  transition: all 300ms;
-  cursor: pointer;
-  outline: none;
-}
-
-#main .content button:hover {
-  background-color: #009DFF;
 }
 
 #scroll-down {
@@ -123,11 +149,9 @@ nav p a:hover {
   font-size: 30px;
   animation: arrow-down 400ms infinite;
 }
+/* end landing container */
 
-#about {
-  background-color: ghostwhite;
-}
-
+/* about container */
 #about .content {
   width: 100%;
   height: 100%;
@@ -148,22 +172,93 @@ nav p a:hover {
   line-height: 1.5;
 }
 
-#services {
+div p a {
+  color: red;
+  cursor: pointer;
 }
 
+div p a:hover {
+  font-weight: bold;
+}
+/* end about container */
+
+/* services container */
+#services {
+  display: table;
+}
+
+.horizontal-container {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.horizontal-container > div {
+	display: block;
+	width: 100%;
+  padding: 10px 0;
+}
+
+.container {
+  background-color: lightblue;
+  border-radius: 5px;
+	display: table;
+	height: 100%;
+	width: 100%;
+  margin: auto;
+	text-align: center;
+  transition: all 400ms;
+}
+
+.container:hover {
+  background-color: #ADDAFF
+}
+
+.container > div {
+	display: table-row;
+}
+
+.container > div > div {
+	display: table-cell;
+}
+
+.service-button > div {
+	vertical-align: bottom;
+	padding: 20px 0;
+}
+
+.service-icon i {
+  padding-top: 20px;
+  font-size: 400%;
+}
+
+.service-description p {
+  vertical-align: middle;
+  padding: 10px 20px;
+  text-align: justify;
+  line-height: 1.8;
+}
+
+.service-button button {
+  font-size: 80%;
+}
+/* end services container */
+
+/* contact form container */
 #contact {
 }
+/* end contact form container */
 
+/* footer container */
 #footer {
   width: 100%;
-  height: 40%;
   background-color: #419BD3;
   text-align: center;
   color: white;
 }
 
 #footer p {
-  padding: 30px;
+  padding: 40px;
 }
 
 .social-icons a {
@@ -180,20 +275,9 @@ nav p a:hover {
 .social-icon-text {
   position: relative;
 }
+/* end footer container */
 
-.full {
-  width: 100%;
-  height: 100%;
-}
-
-.expandable {
-  height: auto;
-}
-
-.text-center {
-  text-align: center;
-}
-
+/* responsive media queries */
 @media screen and (min-width: 768px) {
   #about .content div {
     display: table-cell;
@@ -208,18 +292,70 @@ nav p a:hover {
     top: 2px;
   }
 
-  #about .content div p {
+  .scale-font {
     font-size: 110%;
+  }
+
+  .horizontal-container > div {
+	  width: 33%;
+    display: table-cell;
+  }
+
+  .container {
+    width: 95%;
+    border: 1px solid black;
   }
 
 }
 
 @media screen and (min-width: 1280px) {
-  #about .content div p {
+  .scale-font {
     font-size: 130%;
   }
 }
 
+@media screen and (max-height: 560px) {
+  nav img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-height: 510px) {
+  nav img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media screen and (max-height: 485px) {
+  nav img {
+    display: none;
+  }
+
+  nav h4 {
+    margin-top: 75px;
+  }
+}
+
+@media screen and (max-height: 430px) {
+  nav h4, nav h5 {
+    display: none;
+  }
+
+  nav p:first-of-type {
+    margin-top: 75px;
+  }
+}
+
+@media screen and (max-height: 350px) {
+  nav p:first-of-type {
+    margin-top: 25px;
+  }
+}
+/* end responsive media queries */
+
+/* animations */
 @keyframes arrow-down {
   0% {
     bottom: 0px;
@@ -231,3 +367,4 @@ nav p a:hover {
     bottom: 0px;
   }
 }
+/* end animations */
