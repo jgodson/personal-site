@@ -50,6 +50,7 @@ function submitForm(event) {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       showAlert(this.responseText);
+      document.querySelector('form').reset()
     }
     else {
       showAlert('<div class="alert error">Sorry, there was an error sending your message. Please try again.</div>');
