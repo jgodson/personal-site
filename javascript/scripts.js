@@ -35,3 +35,25 @@ function toggleMenu(thisElement) {
     icon.classList.add('fa-times');
   }
 }
+
+function submitForm(event) {
+	event.preventDefault();
+  var msgObj = {
+    name : document.getElementsByName('name')[0].value,
+    email : document.getElementsByName('email')[0].value,
+    phone : document.getElementsByName('phone')[0].value,
+    comments : document.getElementsByName('message')[0].value
+  }
+	$.post("sendForm.php", msgObj, function(result) {
+    showAlert(result);
+  });
+};
+
+function showAlert(message) {
+  var alertDiv = document.getElementById('alert');
+  alertDiv.innerHTML = message;
+  alertDiv.classList.add('displayed');
+  setTimeout(function() {
+    alertDiv.classList.remove('displayed');
+  }, 5000);
+}
