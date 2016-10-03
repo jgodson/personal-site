@@ -44,18 +44,18 @@ function submitForm(event) {
     phone : document.getElementsByName('phone')[0].value,
     comments : document.getElementsByName('message')[0].value
   }
-	var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "sendForm.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  var formData = urlize(msgObj);
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "sendForm.php" + formData, true);
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      showAlert(message);
+      showAlert(this.responseText);
     }
     else {
       showAlert('<div class="alert error">Sorry, there was an error sending your message. Please try again.</div>');
     }
   };
-  xhttp.send(msgObj);
+  xhttp.send();
 };
 
 function showAlert(message) {
@@ -65,4 +65,14 @@ function showAlert(message) {
   setTimeout(function() {
     alertDiv.classList.remove('displayed');
   }, 5000);
+}
+
+function urlize(dataObj) {
+  if (typeof dataObj != 'object') return undefined;
+  var returnString = "?";
+  Object.keys(dataObj).forEach(function(key) {
+    returnString += encodeURI(key + "=" + dataObj[key]).replace(/[&=]/g, '*').replace('*', '=') + '&';
+  });
+  returnString = returnString.substring(0, returnString.length - 1);
+  return returnString;
 }
