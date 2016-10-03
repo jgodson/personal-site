@@ -44,9 +44,18 @@ function submitForm(event) {
     phone : document.getElementsByName('phone')[0].value,
     comments : document.getElementsByName('message')[0].value
   }
-	$.post("sendForm.php", msgObj, function(result) {
-    showAlert(result);
-  });
+	var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "sendForm.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      showAlert(message);
+    }
+    else {
+      showAlert('<div class="alert error">Sorry, there was an error sending your message. Please try again.</div>');
+    }
+  };
+  xhttp.send(msgObj);
 };
 
 function showAlert(message) {

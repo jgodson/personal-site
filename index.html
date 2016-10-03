@@ -113,7 +113,7 @@
       <div class="full expandable scale-font" id="contact">
         <h1 class="text-center">Contact Me!</h1>
         <p>Please fill out this form with some details about your project or request and I will be in contact with you as soon as possible. Thank you in advance!</p>
-        <form name="contact" action="formSubmit()">
+        <form name="contact" method="post" onsubmit="submitForm(event)">
           <label>Name</label><input type="text" name="name">
           <label>E-mail</label><input type="email" name="email">
           <label>Phone</label><input type="tel" name="phone">
