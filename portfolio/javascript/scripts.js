@@ -3,7 +3,7 @@ var Site = function Site(siteInfo) {
   this.title = siteInfo.title || "No title",
   this.description = siteInfo.description || "No description",
   this.image = siteInfo.image ?
-    "http://www.jasongodson.com/public/images/project-images/" + siteInfo.image + ".png"
+    siteInfo.image
     : "http://placehold.it/400x200",
   this.link = siteInfo.link || '#',
   this.buttonText = siteInfo.buttonText || 'VIEW LIVE SITE',
